@@ -1,6 +1,10 @@
 server:
   port: 8080
 
+spring:
+  application:
+    name: api-gateway
+
 eureka:
   client:
     service-url:
@@ -11,10 +15,10 @@ spring:
     gateway:
       routes:
         - id: employee-service
-          uri: 1b://EMPLOYEE-SERVICE
+          uri: lb://EMPLOYEE-SERVICE
           predicates:
-          - Path=/employee/**
+            - Path=/employee/**
         - id: department-service
-          uri: 1b://DEPARTMENT-SERVICE
+          uri: lb://DEPARTMENT-SERVICE
           predicates:
-          - Path=/department/**
+            - Path=/department/**

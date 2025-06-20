@@ -1,24 +1,15 @@
 server:
-  port: 8083
+  port: 8082
 
-  spring:
-    data:
-      mongodb:
-      uri: spring.data.mongodb.uri=mongodb+srv://jaswanth:jaswanth1234!@mycluster1.wfk3b73.mongodb.net/employeeDb?retryWrites=true&w=majority
-      
-      # jdbc:mysql://localhost:3306/employeedb
+spring:
+  application:
+    name: employee-service
 
-      # username: root
-      # password: root
-      # jpa:
-      #   hibernate:
-      #     ddl-auto: update
-      #     show-sql: true
+  data:
+    mongodb:
+      uri: mongodb+srv://jaswanth:jaswanth1234!@mycluster1.wfk3b73.mongodb.net/employeeDb?retryWrites=true&w=majority
 
-      eureka:
-            client:
-              service-url:
-                defaultZone: http://localhost:8761/eureka
-
-
-
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
